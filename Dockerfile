@@ -19,13 +19,8 @@ RUN apt-get update \
 # Download Pentaho BI Server
 RUN /usr/bin/wget -nv http://downloads.sourceforge.net/project/pentaho/Data%20Integration/5.3/pdi-ce-${BISERVER_TAG}.zip -O /tmp/pdi-ce-${BISERVER_TAG}.zip
 
-RUN /usr/bin/unzip -q /tmp/biserver-ce-${BISERVER_TAG}.zip -d  $PENTAHO_HOME && \
-    rm -f /tmp/biserver-ce-${BISERVER_TAG}.zip $PENTAHO_HOME/biserver-ce/promptuser.sh && \
-    sed -i -e 's/\(exec ".*"\) start/\1 run/' /opt/pentaho/biserver-ce/tomcat/bin/startup.sh && \
-    chmod +x $PENTAHO_HOME/biserver-ce/start-pentaho.sh
-
-ENV PENTAHO_JAVA_HOME /usr/lib/jvm/java-7-oracle
-ENV JAVA_HOME /usr/lib/jvm/java-7-oracle
+RUN  /usr/bin/unzip -q /tmp/pdi-ce-${PDI_TAG}.zip -d  $PENTAHO_HOME &&\
+     rm /tmp/pdi-ce-${PDI_TAG}.zip
 
 COPY scripts $PENTAHO_HOME/scripts
 COPY scripts/run.sh /
