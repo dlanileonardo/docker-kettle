@@ -1,6 +1,6 @@
 FROM wmarinho/ubuntu:oracle-jdk-7
 
-MAINTAINER Wellington Marinho wpmarinho@globo.com
+MAINTAINER Dlani Leonardo dlanileonardo@gmail.com
 
 # Init ENV
 ENV BISERVER_TAG 5.3.0.0-213
