@@ -9,6 +9,7 @@ ENV PENTAHO_HOME /opt/pentaho
 
 # Apply JAVA_HOME
 RUN . /etc/environment
+ENV JAVA_HOME /usr/lib/jvm/java-7-oracle
 ENV PENTAHO_JAVA_HOME $JAVA_HOME
 
 RUN apt-get update \
