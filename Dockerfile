@@ -8,7 +8,7 @@ ENV BISERVER_TAG 5.3.0.0-213
 ENV PENTAHO_HOME /opt/pentaho
 
 # Apply JAVA_HOME
-RUN source /etc/environment
+RUN . /etc/environment
 ENV PENTAHO_JAVA_HOME $JAVA_HOME
 
 RUN apt-get update \
